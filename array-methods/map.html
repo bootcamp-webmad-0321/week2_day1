@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+        // .map() recibe como argumento una función
+        // .map() aplica la función a cada posición del array original
+        // .map() retorna un nuevo array de la misma longitud que el original con el retorno de la función en cada posición
+
+
+
+        // Example 1
+        const values1 = [2, 3, 45, 3, 4, 5]
+
+        const values1Doubled = values1.map(elm => {
+            return elm * 2
+        })
+
+        console.log(`Los valores duplicados son:`, values1Doubled)
+        console.log(`El array original permanece inmutable!`, values1)
+
+
+
+
+
+        console.log('-----')
+
+
+
+
+        // Example 2
+        const cities = ['madrid', 'gijón', 'amsterdam', 'berlin']
+
+        const capitaliezCities = cities.map(elm => {
+            const firstLetter = elm.charAt(0).toUpperCase()
+            const rest = elm.substr(1)
+            const result = firstLetter + rest
+            return result
+        })
+
+        // // Single line equivalent
+        // const capitaliezCities = cities.map(elm => elm.charAt(0).toUpperCase() + elm.substr(1))
+
+
+        console.log(`Las nuevas ciudades con mayúscula:`, capitaliezCities)
+
+
+
+
+
+
+        console.log('-----')
+
+
+
+
+
+        const students = [
+            {
+                name: "Tony Parker",
+                firstProject: 80,
+                secondProject: 75,
+                finalExam: 90
+            },
+            {
+                name: "Marc Barchini",
+                firstProject: 84,
+                secondProject: 65,
+                finalExam: 65
+            },
+            {
+                name: "Claudia Lopez",
+                firstProject: 45,
+                secondProject: 95,
+                finalExam: 99
+            }
+        ]
+
+
+
+
+
+        // // 1.- Solo las notas finales
+        // const finalGrades = students.map(elm => {
+        //     const projectsAvg = (elm.firstProject + elm.secondProject) / 2
+        //     const projectsPart = projectsAvg * .4
+        //     const examPart = elm.finalExam * .6
+        //     const finalGrade = projectsPart + examPart
+
+        //     return finalGrade
+        // })
+
+        // console.log(`Las calificaciones finales son:`, finalGrades)
+
+
+
+
+
+        // // 2.- Con notas finales y nombre
+        // const finalGrades = students.map(elm => {
+        //     const projectsAvg = (elm.firstProject + elm.secondProject) / 2
+        //     const projectsPart = projectsAvg * .4
+        //     const examPart = elm.finalExam * .6
+        //     const finalGrade = projectsPart + examPart
+
+        //     const student = { name: elm.name, finalGrade: finalGrade }
+
+        //     return student
+        // })
+
+        // console.log(`Las calificaciones finales son:`, finalGrades)
+
+
+
+
+
+
+        // // 3.- Con toda la información y las notas finales
+        // const finalGrades = students.map(elm => {
+        //     const projectsAvg = (elm.firstProject + elm.secondProject) / 2
+        //     const projectsPart = projectsAvg * .4
+        //     const examPart = elm.finalExam * .6
+        //     const finalGrade = projectsPart + examPart
+
+        //     const student = {
+        //         name: elm.name,
+        //         firstProject: elm.firstProject,
+        //         secondProject: elm.secondProject,
+        //         finalExam: elm.finalExam,
+        //         finalGrade: finalGrade
+        //     }
+
+        //     return student
+        // })
+
+        // console.log(`Las calificaciones finales son:`, finalGrades)
+
+
+
+
+
+        // 4.- Con toda la información (operador de propagación) y las notas finales
+        const finalGrades = students.map(elm => {
+            const projectsAvg = (elm.firstProject + elm.secondProject) / 2
+            const projectsPart = projectsAvg * .4
+            const examPart = elm.finalExam * .6
+            const finalGrade = projectsPart + examPart
+
+            const student = {
+                ...elm,                 // Removes curly braces from object - makes object copies
+                finalGrade: finalGrade
+            }
+
+            return student
+        })
+
+        console.log(`Las calificaciones finales son:`, finalGrades)
+
+
+    </script>
+</body>
+
+</html>

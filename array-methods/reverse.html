@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        const values = ['uno', 'dos', 'tres']
+
+
+        // Mutando el original
+        // const reversedValues = values.reverse()
+
+        // console.log('reverse invierte un array', reversedValues)
+        // console.log('¡OJO!, muta el original', values)
+
+
+
+
+
+
+
+        // // Creando una copia (fake copy...) ERROR
+
+        // const valuesCopy = values
+        // valuesCopy.reverse()
+
+        // console.log('Esto no es una copia...', valuesCopy)
+        // console.log('Has mutado el original', values)
+
+
+
+
+
+
+        // Creando una copia liviana :D
+
+        const valuesCopy = [...values]
+        valuesCopy.reverse()
+
+        console.log('La copia', valuesCopy)
+        console.log('El original', values)
+
+    </script>
+
+</body>
+
+</html>
