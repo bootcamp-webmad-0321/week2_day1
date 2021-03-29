@@ -51,10 +51,10 @@ Los métodos `.sort()` y `.reverse()` **mutan el array original**.
 
 - El método `.reverse()` 
   - Invierte el orden de los elementos presentes en el array.
- ````javascript
-  const values = [2, 4, 6]
-  values.reverse()          // [6, 4, 2]
-  ````
+   ````javascript
+   const values = [2, 4, 6]
+   values.reverse()          // [6, 4, 2]
+   ````
  
 ## Main points: truthies VS falsies
 Los valores _falsies_ (`null, undefined, false, NaN, 0, ''`) son rechazados por defecto en las estructuras condicionales. Todos los demás (_truthys_) son aceptados por defecto.
