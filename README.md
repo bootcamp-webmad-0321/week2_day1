@@ -52,3 +52,5 @@ Los métodos `.sort()` y `.reverse()` **mutan el array original**.
 ## Main points: truthies VS falsies
 Los valores _falsies_ (`null, undefined, false, NaN, 0, ''`) son rechazados por defecto en las estructuras condicionales. Todos los demás (_truthys_) son aceptados por defecto.
 
+## Main points: deep copy
+Es posible hacer una copia _profunda_ tanto de un objeto/array como de todos los objetos/arrays de su interior a través de la técnica `JSON.parse(JSON.stringify(myArray))`
